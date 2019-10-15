@@ -2,7 +2,7 @@ const express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const roomSchema = mongoose.model('room_model');
-let room = require('../models/room_model');
+let user = require('../models/user_model');
 
 router.get('/welcome',(req,res)=>{
    res.render("room/addOrEdit",{

@@ -1,33 +1,38 @@
 const mongoose = require('mongoose');
 var roomSchema = new mongoose.Schema({
-    fullName:{
+    fullName: {
         type: String,
-        Required: 'Enter first name'
     },
-    time:{
+    email: {
         type: String,
-        Required: 'Enter checkout'
     },
-    people:{
+    mobile: {
         type: Number,
-        Required: 'Enter people'
+    },
+    city: {
+        type: String,
+    },
+    days: {
+        type: Number,
+    },
+    time: {
+        type: Number,
+    },
+    people: {
+        type: Number,
+
     },
     kids: {
         type: Number,
-        Required: 'Enter kids'
+
     },
-    room_type:{
+    room_type: {
         type: String,
-        Required: 'Enter room Type'
     },
-    room_number:{
-        type: Number,
-        Required: 'Enter Room Number'
-    },
-    Created_date:{
-        type: Date,
-        default: Date.now
-    }, 
+    createdDate: {
+        type: Date, 
+        default: Date.now 
+    }
 });
 /*roomSchema.path('email').validate((val) => {
     emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,5 +40,4 @@ var roomSchema = new mongoose.Schema({
 }, 'Invalid e-mail.');*/
 
 
-//module.exports = 
-mongoose.model('room_model',roomSchema);
+module.exports = mongoose.model('room_model', roomSchema);
